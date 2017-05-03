@@ -1,0 +1,9 @@
+div {
+  border-style: solid;
+  border-color: grey;
+}
+
+div.entiteCo {
+  width: 25%;
+  height: 300px;
+}

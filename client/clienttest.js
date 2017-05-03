@@ -4,7 +4,7 @@ if (typeof objtest === "undefined") {
 
     //declaration d'un fonction de l'objet
     premierefonction: function () {
-      var divres = document.getElementById('resultattest');
+      var divres = document.getElementById('resultattest');//div de resultat
 
       $.ajax({
         type: 'POST',

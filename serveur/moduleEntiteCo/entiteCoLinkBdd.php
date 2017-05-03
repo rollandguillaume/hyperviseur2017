@@ -1,16 +1,16 @@
 <?php
   include_once("../coBaseDonnee.php");
 
-  class testlinkBdd {
+  class entiteColinkBdd {
 
     public function __construct() {
 
     }
 
-    public function getTest () {
+    public function getListeEntiteCo () {
       $bdd = coBaseDonnee::getConnection();
 
-      $query = "select * from tabletest";
+      $query = "select * from entiteCo";
 
       $requete = $bdd->prepare($query);
       $requete->execute();
