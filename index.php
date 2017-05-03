@@ -19,10 +19,15 @@
   <div id="resultatEntiteCo" class="entiteCo">
 
   </div>
-  <input id="entiteCo" type="submit" name="entiteCo" value="entiteCo">
+
+
+  <div id="resultatAffichCentr" class="affichCentr">
+
+  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script type="text/javascript" src="client/clienttest.js"></script>
+  <script type="text/javascript" src="client/affichCentr.js"></script>
   <script type="text/javascript" src="client/entiteCo.js"></script>
 
 

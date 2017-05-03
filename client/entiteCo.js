@@ -7,7 +7,7 @@ if (typeof entiteCo === "undefined") {
       var divres = document.getElementById('resultatEntiteCo');
 
       $.ajax({
-        type: 'GET',
+        type: 'POST',
         url: 'serveur/moduleEntiteCo/entiteCo.php',
         data: {"data":"getListeEntiteCo"},
         success: function(data) {
@@ -23,12 +23,12 @@ if (typeof entiteCo === "undefined") {
           //construction de la liste
           i = 0;
           while (i < jsondata.length) {
+            var id = jsondata[i]["id"];
             var div = document.createElement("div");
-            div.setAttribute("id", jsondata[i]["id"]);
-            div.appendChild(document.createTextNode(jsondata[i]["nom"]));
+            div.setAttribute("id", id);
+            div.appendChild(document.createTextNode(jsondata[i]["nom"] + id));
             div.addEventListener('click', function() {
-              // TODO lien pour affichage div centrale
-              console.log("afficher information");
+              affichCentr.toStringEntite(this.getAttribute('id'));
             });
             divres.appendChild(div);
             i++;

@@ -7,8 +7,6 @@ window.onload = function () {
   // }
 
 
-  document.getElementById('entiteCo').onclick = function () {
-    entiteCo.getListeEntiteCo();
-  }
+  entiteCo.getListeEntiteCo();//auto affichage de la liste des enttites actives
 
 }

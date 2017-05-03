@@ -4,6 +4,10 @@ div {
 }
 
 div.entiteCo {
-  width: 25%;
+  width: 20%;
   height: 300px;
+}
+
+div.affichCentr {
+  width: 60%;
 }
