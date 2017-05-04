@@ -5,10 +5,12 @@ div {
 
 div.entiteCo {
   width: 20%;
-  height: 300px;
+  min-height: 95vh;
   overflow: scroll;
+  float: left;
 }
 
 div.affichCentr {
-  width: 60%;
+  width: 75%;
+  min-height: 95vh;
 }
