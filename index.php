@@ -8,20 +8,25 @@
 
 <body>
 
-  <!-- <h1>hyperviseur 2017</h1> -->
+  <div class="row">
+    <!-- <div id="resultattest">
+    </div>
+    <input id="test" type="submit" name="test" value="test"> -->
 
 
-  <!-- <div id="resultattest">
-  </div>
-  <input id="test" type="submit" name="test" value="test"> -->
+    <div id="resultatEntiteCo" class="entiteCo col-1">
 
+    </div>
+    <!-- <input id="entiteCo" type="button" name="" value="entiteCo"> -->
 
-  <div id="resultatEntiteCo" class="entiteCo">
+    <div id="resultatAffichCentr" class="affichCentr col-8">
 
-  </div>
-  <!-- <input id="entiteCo" type="button" name="" value="entiteCo"> -->
+    </div>
 
-  <div id="resultatAffichCentr" class="affichCentr">
+    <div id="resultatLogAlarm" class="logAlarm col-3">
+
+      <input id="logAlarm" type="button" name="" value="logAlarm">
+    </div>
 
   </div>
 
@@ -29,6 +34,7 @@
   <script type="text/javascript" src="client/clienttest.js"></script>
   <script type="text/javascript" src="client/affichCentr.js"></script>
   <script type="text/javascript" src="client/entiteCo.js"></script>
+  <script type="text/javascript" src="client/logAlarm.js"></script>
 
 
   <!-- event a garder en dernier -->

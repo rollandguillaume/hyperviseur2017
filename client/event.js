@@ -11,4 +11,8 @@ window.onload = function () {
     entiteCo.getListeEntiteCo();//auto affichage de la liste des enttites actives
   // }
 
+  document.getElementById('logAlarm').onclick = function () {
+    logAlarm.getLogAlarm();//auto affichage de la liste des enttites actives
+  }
+
 }
