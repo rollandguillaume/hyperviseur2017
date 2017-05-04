@@ -6,6 +6,7 @@ div {
 div.entiteCo {
   width: 20%;
   height: 300px;
+  overflow: scroll;
 }
 
 div.affichCentr {

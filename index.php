@@ -19,7 +19,7 @@
   <div id="resultatEntiteCo" class="entiteCo">
 
   </div>
-
+  <!-- <input id="entiteCo" type="button" name="" value="entiteCo"> -->
 
   <div id="resultatAffichCentr" class="affichCentr">
 
