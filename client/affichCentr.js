@@ -10,6 +10,8 @@ AffichCentr.prototype.toStringEntite = function (idEntite) {
     id:idEntite
   };
 
+  var myself = this;
+
   $.ajax({
     type: 'POST',
     url: 'serveur/moduleAffichCentr/affichCentr.php',
@@ -25,13 +27,19 @@ AffichCentr.prototype.toStringEntite = function (idEntite) {
 
       if (jsondata.length == 1) {
         var div = document.createElement("div");
-        div.appendChild(document.createTextNode("id: "+jsondata[0]["id"]));
-        div.appendChild(document.createTextNode("posX: "+jsondata[0]["posX"]));
-        div.appendChild(document.createTextNode("posY: "+jsondata[0]["posY"]));
-        div.appendChild(document.createTextNode("vitesse: "+jsondata[0]["vitesse"]));
+        var ul = document.createElement("ul");
+
+        myself.makeItemList(ul, "id", jsondata[0]["id"]);
+        myself.makeItemList(ul, "posx", jsondata[0]["posX"]);
+        myself.makeItemList(ul, "posy", jsondata[0]["posY"]);
+        myself.makeItemList(ul, "vitesse", jsondata[0]["vitesse"]);
+        myself.makeItemList(ul, "dispo", jsondata[0]["disponibilite"]);
+
         div.setAttribute("id", "huv");
 
+        div.appendChild(ul);
         divres.appendChild(div);
+
       }
 
     },
@@ -40,4 +48,10 @@ AffichCentr.prototype.toStringEntite = function (idEntite) {
     }
   });
 
-}
+};
+
+AffichCentr.prototype.makeItemList = function (ul, title, val) {
+  var li = document.createElement("li");
+  li.innerHTML = title+" : "+val;
+  ul.appendChild(li);
+};
