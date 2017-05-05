@@ -6,11 +6,29 @@ window.onload = function () {
   var affichCentr = new AffichCentr();
   var logAlarm = new LogAlarm();
 
+  var isLog = true;
+
+  document.getElementById('btnAlerte').onclick = function () {
+    logAlarm.emptyList();
+    isLog = false;
+    logAlarm.getAlarm();
+  }
+  document.getElementById('btnLog').onclick = function () {
+    logAlarm.emptyList();
+    isLog = true;
+    logAlarm.getLog();
+  }
+
   boucleprog = function () {
     console.log("requete en boucle");
 
     entiteCo.getListeEntiteCo(affichCentr);
-    logAlarm.getLogAlarm();
+
+    if (isLog) {
+      logAlarm.getLog();
+    } else {
+      logAlarm.getAlarm();
+    }
   }
 
 
