@@ -9,7 +9,7 @@ window.onload = function () {
   boucleprog = function () {
     console.log("requete en boucle");
 
-    entiteCo.getListeEntiteCo();
+    entiteCo.getListeEntiteCo(affichCentr);
     logAlarm.getLogAlarm();
   }
 
