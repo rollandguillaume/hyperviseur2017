@@ -7,13 +7,13 @@ window.onload = function () {
   // }
 
 
-  window.setInterval(function () {
-    console.log("requete en boucle");
-    
+  // window.setInterval(function () {
+  //   console.log("requete en boucle");
+
     entiteCo.getListeEntiteCo();
     logAlarm.getLogAlarm();
 
-  }, 5000);
+  // }, 10000);
 
 
 

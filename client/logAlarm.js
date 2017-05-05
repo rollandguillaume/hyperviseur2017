@@ -23,13 +23,28 @@ if (typeof logAlarm === "undefined") {
           while (i < jsondata.length) {
             var id = jsondata[i]["id"];
             var div = document.createElement("div");
-            div.setAttribute("id", id);
+            div.setAttribute("id", "logAlarm"+id);
 
             div.appendChild(document.createTextNode(jsondata[i]["date"] + " : " + jsondata[i]["description"]));
             div.addEventListener('click', function() {
-              console.log(this.getAttribute('id'));
+              // console.log(this.getAttribute('id'));
+              var idinfo = "info"+this.getAttribute("id");
+              var divinfo = document.getElementById(idinfo);
+              if (divinfo.style.display == "none") {
+                divinfo.style.display = "block";
+              } else {
+                divinfo.style.display = "none";
+              }
             });
+
+            var divinfo = document.createElement("div");
+            var idinfo = "infologAlarm"+id;
+            divinfo.setAttribute("id", idinfo);
+            divinfo.appendChild(document.createTextNode(idinfo + " : " + jsondata[i]["description"]));
+            divinfo.style.display = "none";
+
             divres.appendChild(div);
+            divres.appendChild(divinfo);
             i++;
           }
 
