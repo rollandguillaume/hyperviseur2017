@@ -9,6 +9,23 @@
 <body>
 
   <div class="row">
+      <div class="col-4">
+        <!-- user : TODO -->
+      </div>
+      <div class="col-4">
+        <p>EXDEMA</p>
+      </div>
+      <div id="date" class="col-4">
+        <script type="text/javascript">
+          window.setInterval(function() {
+            var d = new Date();
+            document.getElementById('date').innerHTML = d.toString();
+          }, 1000)
+        </script>
+      </div>
+  </div>
+
+  <div class="row">
     <!-- <div id="resultattest">
     </div>
     <input id="test" type="submit" name="test" value="test"> -->
@@ -25,8 +42,8 @@
 
     <div id="resultatLogAlarm" class="logAlarm col-3">
 
-      <input id="logAlarm" type="button" name="" value="logAlarm">
     </div>
+    <!-- <input id="logAlarm" type="button" name="" value="logAlarm"> -->
 
   </div>
 
@@ -35,7 +52,6 @@
   <script type="text/javascript" src="client/affichCentr.js"></script>
   <script type="text/javascript" src="client/entiteCo.js"></script>
   <script type="text/javascript" src="client/logAlarm.js"></script>
-
 
   <!-- event a garder en dernier -->
   <script type="text/javascript" src="client/event.js"></script>

@@ -3,20 +3,57 @@ div {
   border-color: grey;
 }
 
+/*
+---------------------------
+ENTITE CO
+---------------------------
+*/
 div.entiteCo {
-  height: 95vh;
+  height: 90vh;
   overflow: scroll;
+  padding: 5px;
 }
 
+div.entiteCo > div {
+  cursor: pointer;
+}
+
+/*
+---------------------------
+AFFICHER CENTRE
+---------------------------
+*/
 div.affichCentr {
-  height: 95vh;
+  height: 90vh;
 }
 
+div.affichCentr > div#huv {
+  float: right;
+  width: 30vh;
+  height: 50vh;
+}
+
+
+/*
+---------------------------
+LOG ALARM
+---------------------------
+*/
 div.logAlarm {
-  height: 95vh;
+  height: 90vh;
   overflow: scroll;
+  padding: 5px;
 }
 
+
+
+
+
+/*
+---------------------------
+LIGNE ET COLONNES
+---------------------------
+*/
 * {
   box-sizing: border-box;
 }
@@ -29,7 +66,6 @@ div.logAlarm {
 
 [class*="col-"] {
     float: left;
-    padding: 5px;
 }
 
 .col-1 {width: 8.33%;}

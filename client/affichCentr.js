@@ -32,7 +32,8 @@ if (typeof affichCentr === "undefined") {
             div.appendChild(document.createTextNode("posX: "+jsondata[0]["posX"]));
             div.appendChild(document.createTextNode("posY: "+jsondata[0]["posY"]));
             div.appendChild(document.createTextNode("vitesse: "+jsondata[0]["vitesse"]));
-
+            div.setAttribute("id", "huv");
+            
             divres.appendChild(div);
           }
 

@@ -7,12 +7,14 @@ window.onload = function () {
   // }
 
 
-  // document.getElementById('entiteCo').onclick = function () {
-    entiteCo.getListeEntiteCo();//auto affichage de la liste des enttites actives
-  // }
+  window.setInterval(function () {
+    console.log("requete en boucle");
+    
+    entiteCo.getListeEntiteCo();
+    logAlarm.getLogAlarm();
 
-  document.getElementById('logAlarm').onclick = function () {
-    logAlarm.getLogAlarm();//auto affichage de la liste des enttites actives
-  }
+  }, 5000);
+
+
 
 }
