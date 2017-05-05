@@ -1,20 +1,23 @@
 //declaration des evenements
 window.onload = function () {
 
-  //declaration du bouton test
-  // document.getElementById('test').onclick = function () {
-  //   objtest.premierefonction();
-  // }
 
+  var entiteCo = new EntiteCo();
+  var affichCentr = new AffichCentr();
+  var logAlarm = new LogAlarm();
 
-  // window.setInterval(function () {
-  //   console.log("requete en boucle");
+  boucleprog = function () {
+    console.log("requete en boucle");
 
     entiteCo.getListeEntiteCo();
     logAlarm.getLogAlarm();
+  }
 
-  // }, 10000);
 
+  boucleprog();
+  window.setInterval(function () {
+    boucleprog();
+  }, 10000);
 
 
 }

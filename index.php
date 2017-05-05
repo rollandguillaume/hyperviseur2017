@@ -41,7 +41,10 @@
     </div>
 
     <div id="resultatLogAlarm" class="logAlarm col-3">
-
+      <div class="row">
+        <input class="col-6" type="button" name="" value="log">
+        <input class="col-6" type="button" name="" value="alerte">
+      </div>
     </div>
     <!-- <input id="logAlarm" type="button" name="" value="logAlarm"> -->
 
