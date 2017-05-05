@@ -89,12 +89,12 @@ LogAlarm.prototype.constructList = function (jsondata) {
     var div = document.createElement("div");
     div.setAttribute("id", "logAlarm"+id);
 
-    div.appendChild(document.createTextNode(jsondata[i]["date"] + " : " + jsondata[i]["description"]));
+    div.appendChild(document.createTextNode(jsondata[i]["date"] + " (" + jsondata[i]["time"] + ") : " + jsondata[i]["description"]));
 
     var divinfo = document.createElement("div");
     var idinfo = "infologAlarm"+id;
     divinfo.setAttribute("id", idinfo);
-    divinfo.appendChild(document.createTextNode(idinfo + " : " + jsondata[i]["description"]));
+    divinfo.appendChild(document.createTextNode(idinfo + " : " + jsondata[i]["info"]));
     divinfo.style.display = "none";
 
     this.toggleVisibility(div, divinfo);

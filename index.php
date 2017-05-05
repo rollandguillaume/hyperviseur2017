@@ -8,12 +8,13 @@
 
 <body>
 
-  <div class="row">
+  <div class="row header">
       <div class="col-4">
+        username :
         <!-- user : TODO -->
       </div>
       <div class="col-4">
-        <p>EXDEMA</p>
+        EXDEMA
       </div>
       <div id="date" class="col-4">
         <script type="text/javascript">

@@ -33,6 +33,10 @@ div.affichCentr > div#huv {
   height: 50vh;
 }
 
+div.affichCentr > video {
+  width: 100%;
+  height: 100%;
+}
 
 /*
 ---------------------------

@@ -1,6 +1,7 @@
+var idCentrale = 0;//item a actualiser sur le panneau central
+
 //declaration des evenements
 window.onload = function () {
-
 
   var entiteCo = new EntiteCo();
   var affichCentr = new AffichCentr();

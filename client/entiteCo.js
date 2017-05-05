@@ -24,9 +24,20 @@ EntiteCo.prototype.getListeEntiteCo = function (affichCentr) {
         var id = jsondata[i]["id"];
         var div = document.createElement("div");
         div.setAttribute("id", id);
-        div.appendChild(document.createTextNode(jsondata[i]["nom"] + id));
+        div.appendChild(document.createTextNode(jsondata[i]["nom"]));
         div.addEventListener('click', function() {
-          affichCentr.toStringEntite(this.getAttribute('id'));
+          var t = this;
+          idCentrale = t.getAttribute('id');
+          affichCentr.toStringEntite(t.getAttribute('id'));
+          var interv = window.setInterval(function () {
+            // console.log("actualisation centrale "+idCentrale);
+            if (idCentrale == t.getAttribute('id')) {
+              affichCentr.toStringEntite(t.getAttribute('id'));
+            } else {
+              window.clearInterval(interv);//s'auto stoper
+            }
+          }, 10000);
+
         });
         divres.appendChild(div);
         i++;
