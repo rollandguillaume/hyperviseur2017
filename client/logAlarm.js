@@ -44,7 +44,7 @@ LogAlarm.prototype.getAlarm = function () {
     data: {data:datasend},
     success: function(data) {
       var jsondata = JSON.parse(data);
-      console.log(jsondata);
+      // console.log(jsondata);
 
       myself.constructList(jsondata);
 
@@ -70,7 +70,7 @@ LogAlarm.prototype.getLog = function () {
     data: {data:datasend},
     success: function(data) {
       var jsondata = JSON.parse(data);
-      console.log(jsondata);
+      // console.log(jsondata);
 
       myself.constructList(jsondata);
 
