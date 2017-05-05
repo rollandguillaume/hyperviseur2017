@@ -26,10 +26,6 @@
   </div>
 
   <div class="row">
-    <!-- <div id="resultattest">
-    </div>
-    <input id="test" type="submit" name="test" value="test"> -->
-
 
     <div id="resultatEntiteCo" class="entiteCo col-1">
 
@@ -51,7 +47,6 @@
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script type="text/javascript" src="client/clienttest.js"></script>
   <script type="text/javascript" src="client/affichCentr.js"></script>
   <script type="text/javascript" src="client/entiteCo.js"></script>
   <script type="text/javascript" src="client/logAlarm.js"></script>
