@@ -7,7 +7,7 @@
 
     }
 
-    public function getLogAlarm () {
+    public function getLogAlarm ($id) {
       $bdd = coBaseDonnee::getConnection();
 
       $query = "select * from logAlarm";
@@ -17,23 +17,48 @@
       return $requete->fetchAll();
     }
 
-    public function getAlarm () {
+    public function getAlarm ($id) {
       $bdd = coBaseDonnee::getConnection();
 
-      $query = "select * from logAlarm where type=\"alarme\"";
+      $query = "
+        select * from logAlarm
+        where
+          (
+            type='alarme'
+            and niveau=1
+            and traitee=0
+            and sender = :id
+          )
+        or
+          (
+            type='alarme'
+            and niveau > 1
+            and traitee=0
+            and sender != :id
+          )
+        ";
+
+      $tabexe = array();
+      $tabexe["id"] = $id;
 
       $requete = $bdd->prepare($query);
-      $requete->execute();
+      $requete->execute($tabexe);
       return $requete->fetchAll();
     }
 
-    public function getLog () {
+    public function getLog ($id) {
       $bdd = coBaseDonnee::getConnection();
 
-      $query = "select * from logAlarm where type=\"log\"";
+      $query = "
+        select * from logAlarm
+        where type=\"log\"
+        and sender = :id
+        ";
+      $tabexe = array();
+      $tabexe["id"] = $id;
 
       $requete = $bdd->prepare($query);
-      $requete->execute();
+      $requete->execute($tabexe);
       return $requete->fetchAll();
     }
 

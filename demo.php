@@ -14,11 +14,13 @@
 
   <hr>
   <div class="">
-    <input id="idEntite" type="text" name="" value="" placeholder="id entite">
+    <input id="idEntite" type="int" name="" value="" placeholder="id entite">
+    <input id="nameEntite" type="text" name="" value="" placeholder="name entite">
     <select id="selectAction" class="" name="">
       <option value="avarie">avarie</option>
       <option value="connecter">connecter</option>
       <option value="deconnecter">deconnecter</option>
+      <option value="creer">creer</option>
     </select>
     <input id="actionEntite" type="button" name="" value="go">
   </div>

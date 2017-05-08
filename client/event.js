@@ -1,4 +1,5 @@
 var idCentrale = 0;//item a actualiser sur le panneau central
+var isLog = true;
 
 //declaration des evenements
 window.onload = function () {
@@ -7,7 +8,6 @@ window.onload = function () {
   var affichCentr = new AffichCentr();
   var logAlarm = new LogAlarm();
 
-  var isLog = true;
 
   document.getElementById('btnAlerte').onclick = function () {
     logAlarm.emptyList();
@@ -23,7 +23,7 @@ window.onload = function () {
   boucleprog = function () {
     console.log("requete en boucle");
 
-    entiteCo.getListeEntiteCo(affichCentr);
+    entiteCo.getListeEntiteCo(affichCentr, logAlarm);
 
     if (isLog) {
       logAlarm.getLog();

@@ -97,6 +97,7 @@
 		  `time` time DEFAULT NULL,
 		  `info` varchar(50) DEFAULT NULL,
 		  `traitee` int(4) DEFAULT 0,
+      niveau int(5) DEFAULT NULL,
       sender int(10) NOT NULL
 
 		) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -104,12 +105,12 @@
       $requete = $bdd->prepare($query);
       $requete->execute();
 
-      $query ="INSERT INTO `logAlarm` ( `type`, `description`, `date`, `time`, `info`, sender) VALUES
-    		('alarme', 'description de l\'alarme', '2017-05-04', '00:00:00', 'informations', 1),
-    		('log', 'description du log', '2017-05-04', '00:00:00', 'informations', 2),
-    		('alarme', 'alarme de sécurité', '2017-05-04', '00:00:00', 'informations', 1),
-    		('log', 'robot truc s\'est connecté', '2017-05-04', '00:00:00', 'informations', 3),
-    		('alarme', 'eboulement niveau cavite 3', '2017-05-04', '00:00:00', 'informations', 2);
+      $query ="INSERT INTO `logAlarm` ( `type`, `description`, `date`, `time`, `info`, sender, niveau) VALUES
+    		('alarme', 'description de l\'alarme', '2017-05-04', '00:00:00', 'informations', 1, 2),
+    		('log', 'description du log', '2017-05-04', '00:00:00', 'informations', 2, 1),
+    		('alarme', 'alarme de sécurité', '2017-05-04', '00:00:00', 'informations', 1, 2),
+    		('log', 'robot truc s\'est connecté', '2017-05-04', '00:00:00', 'informations', 3, 3),
+    		('alarme', 'eboulement niveau cavite 3', '2017-05-04', '00:00:00', 'informations', 2, 1);
     		";
       $requete = $bdd->prepare($query);
       $requete->execute();
