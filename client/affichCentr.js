@@ -22,6 +22,7 @@ AffichCentr.prototype.toStringEntite = function (idEntite) {
       // console.log(jsondata);
 
       var nameOfVideo = "video0.ogv";//a recuperer d'une requete TODO
+      
       var videoSuppri = 1;
       if (divres.childNodes[1] !== undefined) {
         var v = divres.childNodes[1];

@@ -1,6 +1,40 @@
 div {
-  border-style: solid;
-  border-color: silver;
+  font-family : Helvetica;
+}
+
+:root {
+--main-color : rgb(0,114, 168);
+--light-color : rgb(232, 231, 231);
+}
+/*
+---------------------------
+HEADER
+---------------------------
+*/
+div.header {
+  background-color: var(--main-color);
+  color : white;
+  padding: 10px;
+  height: 5vh;
+}
+
+#identifier {
+  text-align: left;
+  font-size: 0.8em;
+
+}
+#EXDEMA {
+  font-size: 2.5em;
+  text-align: center;
+  font-weight: bolder;
+
+}
+
+#date {
+  text-align: right;
+  font-size: 0.8em;
+  font-style: italic;
+
 }
 
 /*
@@ -9,9 +43,14 @@ ENTITE CO
 ---------------------------
 */
 div.entiteCo {
-  height: 90vh;
+  height: 95vh;
   overflow: scroll;
   padding: 5px;
+  text-align: center;
+  background-color: var(--light-color);
+  text-transform: capitalize;
+  border-color: var(--main-color);
+  line-height: 2em;
 }
 
 div.entiteCo > div {
@@ -23,19 +62,27 @@ div.entiteCo > div {
 AFFICHER CENTRE
 ---------------------------
 */
+
 div.affichCentr {
-  height: 90vh;
+  height: 95vh;
+  border-style: solid;
+  border-color: var(--main-color);
 }
 
 div.affichCentr > div#huv {
   float: right;
+  padding:1em;
   width: 30vh;
-  height: 50vh;
-}
+  height: 40vh;
+  margin-right: 20px;
+  margin-top: 20px;
+  border: 3px solid rgba(0,114,168,1);
+  border-radius: 10px;
+  box-shadow: 3px 3px 4px silver;
+  background-color: rgba(208, 208, 208, 0.);
+  font-size: 0.8em;
+  text-transform: capitalize;
 
-div.affichCentr > video {
-  width: 100%;
-  height: 100%;
 }
 
 /*
@@ -43,15 +90,36 @@ div.affichCentr > video {
 LOG ALARM
 ---------------------------
 */
+
 div.logAlarm {
-  height: 90vh;
+  height: 95vh;
   overflow: scroll;
   padding: 5px;
+  border-style: solid;
+  border-color: var(--main-color);
+  font-variant-caps: all-small-caps;
 }
 
+[id*="logAlarm"]  {
+  cursor: pointer;
+  font-weight: bold;
+}
 
+[id*="infologAlarm"]  {
+  cursor: default;
+  margin-left: 30px;
+  font-weight: normal;
+  font-style: italic;
+}
 
+div.logAlarm > div.row > input {
+  cursor: pointer;
+}
 
+#resultatLogAlarm {
+  font-size: 1em;
+  background-color: var(--light-color);
+}
 
 /*
 ---------------------------
@@ -63,13 +131,13 @@ LIGNE ET COLONNES
 }
 
 .row::after {
-    content: "";
-    clear: both;
-    display: table;
+  content: "";
+  clear: both;
+  display: table;
 }
 
 [class*="col-"] {
-    float: left;
+  float: left;
 }
 
 .col-1 {width: 8.33%;}
