@@ -32,8 +32,11 @@ LogAlarm.prototype.getLogAlarm = function () {
 LogAlarm.prototype.getAlarm = function () {
   var divres = document.getElementById('resultatLogAlarm');
 
+  isLog = false;
+
   var datasend = {
-    data:"alarm"
+    data:"alarm",
+    id:idCentrale
   };
 
   var myself = this;
@@ -45,6 +48,8 @@ LogAlarm.prototype.getAlarm = function () {
     success: function(data) {
       var jsondata = JSON.parse(data);
       // console.log(jsondata);
+
+      myself.emptyList();
 
       myself.constructList(jsondata);
 
@@ -58,8 +63,11 @@ LogAlarm.prototype.getAlarm = function () {
 LogAlarm.prototype.getLog = function () {
   var divres = document.getElementById('resultatLogAlarm');
 
+  isLog = true;
+
   var datasend = {
-    data:"log"
+    data:"log",
+    id:idCentrale
   };
 
   var myself = this;
@@ -71,6 +79,8 @@ LogAlarm.prototype.getLog = function () {
     success: function(data) {
       var jsondata = JSON.parse(data);
       // console.log(jsondata);
+
+      myself.emptyList();
 
       myself.constructList(jsondata);
 
@@ -85,16 +95,25 @@ LogAlarm.prototype.constructList = function (jsondata) {
   //construction de la liste
   var i = 0;
   while (i < jsondata.length) {
+    var obj = jsondata[i];
     var id = jsondata[i]["id"];
     var div = document.createElement("div");
     div.setAttribute("id", "logAlarm"+id);
 
-    div.appendChild(document.createTextNode(jsondata[i]["date"] + " (" + jsondata[i]["time"] + ") : " + jsondata[i]["description"]));
+    div.appendChild(document.createTextNode(
+      jsondata[i]["date"]
+      + " (" + jsondata[i]["time"] + ") : "
+      + "sender=" + obj["sender"] + "\n"
+      + jsondata[i]["description"])
+    );
 
     var divinfo = document.createElement("div");
     var idinfo = "infologAlarm"+id;
     divinfo.setAttribute("id", idinfo);
-    divinfo.appendChild(document.createTextNode(idinfo + " : " + jsondata[i]["info"]));
+    divinfo.appendChild(document.createTextNode(
+      idinfo
+      + " => niveau : " + jsondata[i]["niveau"])
+    );
     divinfo.style.display = "none";
 
     this.toggleVisibility(div, divinfo);
