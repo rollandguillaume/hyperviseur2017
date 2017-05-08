@@ -4,8 +4,8 @@ function Demo () {
 
 Demo.prototype.makeAction = function (idEntite, action) {
   var datasend = {
-    action:"logAlarm",
-    id:"gzrgeh"
+    action:action,
+    id:idEntite
   };
 
   $.ajax({
@@ -15,7 +15,6 @@ Demo.prototype.makeAction = function (idEntite, action) {
     success: function(data) {
       var jsondata = JSON.parse(data);
       console.log(jsondata);
-
 
     },
     error: function() {
