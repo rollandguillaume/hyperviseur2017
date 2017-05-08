@@ -39,7 +39,7 @@ Demo.prototype.reinitialiser = function () {
 
 
     },
-    error: function() {
+    error: function(erreur) {
       console.log("erreur");
     }
   });
