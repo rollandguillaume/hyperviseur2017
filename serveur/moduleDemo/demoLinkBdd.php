@@ -47,6 +47,7 @@
     		DROP TABLE IF EXISTS logAlarm;
     		DROP TABLE IF EXISTS infoEntite;
     		DROP TABLE IF EXISTS entiteCo;
+        DROP TABLE IF EXISTS utilisateur;
     		";
       $requete = $bdd->prepare($query);
       $requete->execute();
@@ -129,6 +130,23 @@
     		(1, 'titre1', 1, 'descript1'),
     		(2, 'titre2', 2, 'descript2');
     		";
+      $requete = $bdd->prepare($query);
+      $requete->execute();
+
+      $query ="CREATE TABLE `utilisateur` (
+		  `id` int(10) AUTO_INCREMENT PRIMARY KEY,
+      login varchar(20) not null,
+      pwd varchar(20) not null,
+      admin int(4) default 0
+		) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+		";
+      $requete = $bdd->prepare($query);
+      $requete->execute();
+
+      $query ="INSERT INTO `utilisateur` (`login`, `pwd`, `admin`) VALUES
+        ('aze', 'aze', 1),
+        ('qsd', 'qsd', 0);
+        ";
       $requete = $bdd->prepare($query);
       $requete->execute();
 
