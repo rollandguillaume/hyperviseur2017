@@ -107,6 +107,8 @@ LogAlarm.prototype.constructList = function (jsondata) {
       + jsondata[i]["description"])
     );
 
+    this.setClassAlarme(div, obj["niveau"]);
+
     var divinfo = document.createElement("div");
     var idinfo = "infologAlarm"+id;
     divinfo.setAttribute("id", idinfo);
@@ -138,4 +140,8 @@ LogAlarm.prototype.emptyList = function () {
   while (this.divres.childNodes.length > 2) {
     this.divres.removeChild(this.divres.childNodes[2]);
   }
+};
+
+LogAlarm.prototype.setClassAlarme = function (div, nivAlerte) {
+  div.setAttribute("class", "niveau"+nivAlerte);
 };
