@@ -137,6 +137,16 @@ div.logAlarm > div.row > input {
   background-color: var(--light-color);
 }
 
+.niveau3 {
+  background-color: red;
+}
+.niveau2 {
+  background-color: orange;
+}
+.niveau1 {
+  background-color: yellow;
+}
+
 /*
 ---------------------------
 LIGNE ET COLONNES
