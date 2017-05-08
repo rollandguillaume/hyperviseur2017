@@ -67,22 +67,38 @@ div.affichCentr {
   height: 95vh;
   border-style: solid;
   border-color: var(--main-color);
+  position : relative;
+  display : inline-block;
+  overflow: hidden;
 }
 
 div.affichCentr > div#huv {
-  float: right;
   padding:1em;
   width: 30vh;
   height: 40vh;
   margin-right: 20px;
   margin-top: 20px;
-  border: 3px solid rgba(0,114,168,1);
-  border-radius: 10px;
-  box-shadow: 3px 3px 4px silver;
   background-color: rgba(208, 208, 208, 0.);
-  font-size: 0.8em;
+  font-size: 1.3em;
   text-transform: capitalize;
+  top:0; right:-15vh;
+  position : absolute;
+  padding:0.4em;
+  margin:0;
+  text-shadow: 2px 2px 2px #000000;
+  color:white;
+  z-index:99;
+}
 
+video {
+	border: 3px solid rgba(0,114,168,1);
+  	border-radius: 10px;
+  	box-shadow: 3px 3px 4px silver;
+	position : absolute;
+	top : 0;
+	width : 100%;
+	left : 0;
+	z-index: -1;
 }
 
 /*
