@@ -15,7 +15,7 @@ div.header {
   background-color: var(--main-color);
   color : white;
   padding: 10px;
-  height: 5vh;
+  height: 7vh;
 }
 
 #identifier {
@@ -43,7 +43,7 @@ ENTITE CO
 ---------------------------
 */
 div.entiteCo {
-  height: 95vh;
+  height: 91vh;
   overflow: scroll;
   padding: 5px;
   text-align: center;
@@ -64,7 +64,7 @@ AFFICHER CENTRE
 */
 
 div.affichCentr {
-  height: 95vh;
+  height: 91vh;
   border-style: solid;
   border-color: var(--main-color);
   position : relative;
@@ -108,7 +108,7 @@ LOG ALARM
 */
 
 div.logAlarm {
-  height: 95vh;
+  height: 91vh;
   overflow: scroll;
   padding: 5px;
   border-style: solid;
