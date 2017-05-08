@@ -17,7 +17,7 @@ window.onload = function () {
     var option = select.options[select.selectedIndex].value;
     var id = idEntite.value;
 
-    demo.makeAction();
+    demo.makeAction(id, option);
   };
 
 }

@@ -13,7 +13,9 @@ if (isset($_POST["data"])) {
     }
 
   } else if (isset($data["action"]) && isset($data["id"])) {
-    echo json_encode($link->makeAction());
+    $action = $data["action"];
+    $id = $data["id"];
+    echo json_encode($link->makeAction($action, $id));
 
   }
 
