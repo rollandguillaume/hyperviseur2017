@@ -26,13 +26,9 @@ AffichCentr.prototype.toStringEntite = function (idEntite) {
       var videoSuppri = 1;
       if (divres.childNodes[1] !== undefined) {
         var v = divres.childNodes[1];
-        if (v.childNodes[0].getAttribute("src") == ("ressources/video/"+nameOfVideo)) {
-          videoSuppri = 2;//laisser video
-        }
       }
 
-      //vider le contenu
-      while (divres.childNodes.length > videoSuppri) {
+      while (divres.childNodes.length > 1) {
         divres.removeChild(divres.childNodes[videoSuppri]);
       }
 
@@ -40,10 +36,8 @@ AffichCentr.prototype.toStringEntite = function (idEntite) {
         var div = document.createElement("div");
         var ul = document.createElement("ul");
         //
-        if (videoSuppri != 2) {
           var video = myself.makeVideo("video0.ogv", "ogg");
           divres.appendChild(video);
-        }
         //
         myself.makeItemList(ul, "id", jsondata[0]["id"]);
         myself.makeItemList(ul, "posx", jsondata[0]["posX"]);
@@ -74,13 +68,8 @@ AffichCentr.prototype.makeItemList = function (ul, title, val) {
 };
 
 AffichCentr.prototype.makeVideo = function (name, type) {
-  var video = document.createElement("video");
-  video.setAttribute("autoplay", "");
-  video.setAttribute("loop", "");
-  var source = document.createElement("source");
-  source.setAttribute("src", "ressources/video/"+name);
-  source.setAttribute("type", "video/"+type);
+  var video = document.createElement("img");
+  video.setAttribute("src", "/webcm/webcam/webMDR.jpg?"+ new Date().getTime());
 
-  video.appendChild(source);
   return video;
 };
