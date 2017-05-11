@@ -30,6 +30,13 @@
       </div>
       <div class="col-4">
         EXDEMA
+        <?php
+          if (isset($_SESSION["admin"]) && ($_SESSION["admin"] == 1)) {
+            ?>
+            <a href="sudo.php"><input type="button" name="" value="admin"></a>
+            <?php
+          }
+         ?>
       </div>
       <div id="date" class="col-4">
         <script type="text/javascript">
