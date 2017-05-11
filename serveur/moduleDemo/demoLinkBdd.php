@@ -112,7 +112,7 @@
 
 	}
 
-    public function makeAction ($action, $id) {
+    public function makeAction ($action, $id, $name) {
       $bdd = coBaseDonnee::getConnection();
 
       $tabexe = array();
@@ -138,32 +138,49 @@
 
       } else if($action == "connecter"){
 
-		$query = "
-          insert into entiteCo (nom)
-          values (
-            ".$id."
-          );
-		  ";
-
-		  //TODO vérifier la requête
+    		$query = "
+            insert into entiteCo (nom)
+            values (
+              :name
+            );
+  		  ";
+        $tabexe["name"] = $name;
 
       } else if($action == "deconnecter"){
+        $query = "select count(nom) from entiteCo where id= :id";
+        $tabexe["id"] = $id;
+        $requete = $bdd->prepare($query);
+        $requete->execute($tabexe);
 
-		  $query = "
-          delete from entiteCo
-          where id = ".$id."
-          ;
-		  ";
+        if ($requete->fetch()[0] == 1) {
+          $query = "
+              delete from entiteCo
+              where id = :id
+              ;
 
-		  //TODO vérifier la requête
+              insert into logAlarm (type, description, info, date, time, traitee, sender)
+              values (
+                'log',
+                'description de la deconnexion',
+                'information deconnexion',
+                :date,
+                :time,
+                0,
+                :id
+              );
+          ";
+          $tabexe["date"] = date("Y-m-d");
+          $tabexe["time"] = date("H:i:s");
+        };
 
-	  } else if($action =="creer"){
-		  //TODO creer table d'entités dans la bdd
-	  }
+
+  	  } else if($action =="creer"){
+  		  //TODO creer table d'entités dans la bdd
+  	  }
 
       $requete = $bdd->prepare($query);
       $requete->execute($tabexe);
-      return array("update" => $action,"id" => $id);
+      return array("action" => $action,"id" => $id,"name" => $name);
     }
 
 
@@ -198,7 +215,6 @@
   		) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
       $requete = $bdd->prepare($query);
       $requete->execute();
-
 
 
       $query ="CREATE TABLE `logAlarm` (

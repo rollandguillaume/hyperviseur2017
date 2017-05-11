@@ -2,10 +2,11 @@ function Demo () {
 
 }
 
-Demo.prototype.makeAction = function (idEntite, action) {
+Demo.prototype.makeAction = function (idEntite, action, nameEntite) {
   var datasend = {
     action:action,
-    id:idEntite
+    id:idEntite,
+    nameEntite:nameEntite
   };
 
   $.ajax({

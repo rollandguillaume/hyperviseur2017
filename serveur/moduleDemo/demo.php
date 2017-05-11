@@ -21,7 +21,8 @@ if (isset($_POST["data"])) {
   } else if (isset($data["action"]) && isset($data["id"])) {
     $action = $data["action"];
     $id = $data["id"];
-    echo json_encode($link->makeAction($action, $id));
+    $name = $data["nameEntite"];
+    echo json_encode($link->makeAction($action, $id, $name));
 
   }
 
