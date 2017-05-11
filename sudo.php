@@ -36,17 +36,17 @@ session_start();
 
       <div class="row">
 
-        <div id="resultatEntiteCo" class="entiteCo col-1">
+        <!-- <div id="resultatEntiteCo" class="entiteCo col-1">
           <div id="droits"> Droits</div>
           <div id="log"> Log</div>
-        </div>
+        </div> -->
         <!-- <input id="entiteCo" type="button" name="" value="entiteCo"> -->
 
-        <div id="resultatAffichCentr" class="affichCentr col-8">
+        <div id="resultatAffichCentr" class="affichCentr col-6">
 
         </div>
 
-        <div id="resultatLogAlarm" class="logAlarm col-3">
+        <div id="resultatLogAlarm" class="logAlarm col-6">
           <div class="row">
           </div>
         </div>
@@ -54,7 +54,7 @@ session_start();
 
       </div>
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+      <script src="ressources/js/jquery-1.12.4.min.js"></script>
       <script type="text/javascript" src="client/config.js"></script>
       <script type="text/javascript" src="client/entiteCo.js"></script>
       <script type="text/javascript" src="client/logAlarm.js"></script>
