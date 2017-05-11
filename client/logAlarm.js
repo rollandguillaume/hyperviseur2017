@@ -74,7 +74,7 @@ LogAlarm.prototype.countAlerte = function () {
     data: {data:datasend},
     success: function(data) {
       var jsondata = JSON.parse(data);
-      console.log(jsondata);
+      // console.log(jsondata);
 
       if (jsondata > nbAlerteEnCours) {
         btnalerte.style.backgroundColor = "red";

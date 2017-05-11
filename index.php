@@ -33,6 +33,7 @@
         <?php
           if (isset($_SESSION["admin"]) && ($_SESSION["admin"] == 1)) {
             ?>
+            form
             <a href="sudo.php"><input type="button" name="" value="admin"></a>
             <?php
           }
@@ -61,13 +62,19 @@
 
       <div id="resultatLogAlarm" class="logAlarm col-3">
         <div class="row">
-          <input id="btnLog" class="col-6" type="button" name="" value="log">
-          <input id="btnAlerte" class="col-6" type="button" name="" value="alerte">
+          <input id="btnLog" class="col-4" type="button" name="" value="log">
+          <input id="btnAlerte" class="col-4" type="button" name="" value="alerte">
+          <!-- <a href="pdf.php"><input type="button" name="" value="pdf"></a> -->
+          <form class="col-4" action="pdf.php" method="post">
+            <input type="text" name="truc" value="" hidden>
+            <input type="submit" name="" value="pdf">
+          </form>
         </div>
       </div>
       <!-- <input id="logAlarm" type="button" name="" value="logAlarm"> -->
 
     </div>
+
 
     <script src="ressources/js/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="client/affichCentr.js"></script>
