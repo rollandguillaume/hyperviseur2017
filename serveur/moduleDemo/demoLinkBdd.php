@@ -34,15 +34,15 @@
 		
 		$query ="INSERT INTO `utilisateur` (`login`, `pwd`, `admin`) VALUES
 			('aze', 'aze', 1),
-			('qsd', 'qsd', 0);
+			('mpeyrichon', 'mpeyrichon', 1);
 			";
 		$requete = $bdd->prepare($query);
 		$requete->execute();
 		
 		$query = "INSERT INTO `entiteCo` (`nom`) values
-	      	('robot0'),
-      		('robot1'),
-      		('robot2');";
+	      	('robot1'),
+      		('robot2'),
+      		('robot3');";
 		$requete = $bdd->prepare($query);
 		$requete->execute();
 		
@@ -58,13 +58,14 @@
 		
 	}
 	
-	//le robot 1 crée une alerte de niveau 1
+	//le robot 1 crée une alerte de niveau 1 le robot 2 en crée une de niveau 2
 	public function config2.1(){
 		
 		$bdd = coBaseDonnee::getConnection();
 		
 		$query = "INSERT INTO `logAlarm`(type,description,date,time,info,traitee,niveau,sender) VALUES
-			('batterie','niveau de batterie à 25%',:date,:time,'',0,1,1);
+			('alarme','niveau de batterie à 25%',:date,:time,'',0,2,1),
+			('alarme','besoin d'assistance',:date,:time,'',0,1,2);
     		";
 		$requete = $bdd->prepare($query);
 		$requete->execute();
