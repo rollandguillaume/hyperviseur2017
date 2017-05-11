@@ -14,15 +14,8 @@
 		
 		$bdd = coBaseDonnee::getConnection();
 	  
-		$query ="INSERT INTO `tabletest` (`id`, `titre`, `autre`, `description`) VALUES
-    		(1, 'titre1', 1, 'descript1'),
-    		(2, 'titre2', 2, 'descript2');
-    		";
-		$requete = $bdd->prepare($query);
-		$requete->execute();
-	  
 		$query ="INSERT INTO `utilisateur` (`login`, `pwd`, `admin`) VALUES
-			('dh', 'dh', 1),
+			('aze', 'aze', 1),
 			('qsd', 'qsd', 0);
 			";
 		$requete = $bdd->prepare($query);
@@ -40,7 +33,7 @@
 		$bdd = coBaseDonnee::getConnection();
 		
 		$query ="INSERT INTO `utilisateur` (`login`, `pwd`, `admin`) VALUES
-			('dh', 'dh', 1),
+			('aze', 'aze', 1),
 			('qsd', 'qsd', 0);
 			";
 		$requete = $bdd->prepare($query);
@@ -77,7 +70,7 @@
 		$bdd = coBaseDonnee::getConnection();
 		
 		$query ="INSERT INTO `utilisateur` (`login`, `pwd`, `admin`) VALUES
-			('dh', 'dh', 1),
+			('aze', 'aze', 1),
 			('qsd', 'qsd', 0);
 			";
 		$requete = $bdd->prepare($query);
@@ -141,9 +134,31 @@
         $tabexe["id"] = $id;
         $tabexe["date"] = date("Y-m-d");
         $tabexe["time"] = date("H:i:s");
-      } else {
-        //TODO else if avec autre action
-      }
+		
+      } else if($action == "connecter"){
+		  
+		$query = "
+          insert into entiteCo (nom)
+          values (
+            ".$id."
+          );
+		  ";
+		  
+		  //TODO vérifier la requête
+		  
+      } else if($action == "deconnecter"){
+		  
+		  $query = "
+          delete from entiteCo
+          where id = ".$id."
+          ;
+		  ";
+		  
+		  //TODO vérifier la requête
+		  
+	  } else if($action =="creer"){
+		  //TODO creer table d'entités dans la bdd
+	  }
 
       $requete = $bdd->prepare($query);
       $requete->execute($tabexe);
