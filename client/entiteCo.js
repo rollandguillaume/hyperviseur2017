@@ -31,7 +31,7 @@ EntiteCo.prototype.getListeEntiteCo = function (affichCentr, logAlarm) {
           affichCentr.toStringEntite(t.getAttribute('id'));
           logAlarm.getLog();
           var interv = window.setInterval(function () {
-            console.log("actualisation centrale "+idCentrale);
+            // console.log("actualisation centrale "+idCentrale);
             if (idCentrale == t.getAttribute('id')) {
               affichCentr.toStringEntite(t.getAttribute('id'));
             } else {
