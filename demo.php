@@ -10,6 +10,9 @@
 
   <div class="">
     <input id="reinitialise" type="button" name="" value="restart">
+	<input id="config1" type="button" name="" value="Configuration 1">
+	<input id="config2" type="button" name="" value="Configuration 2">
+	<input id="config3" type="button" name="" value="Configuration 3">
   </div>
 
   <hr>
