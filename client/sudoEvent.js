@@ -2,30 +2,25 @@ var defl = "droits";
 
 window.onload = function () {
 
+  var entiteCo = new EntiteCo();
+  var logAlarm = new LogAlarm();
+
+
   document.getElementById('droits').onclick = function () {
-	defl = "droits";
-	boucleprog();
+    entiteCo.getDroit();
+
   }
   document.getElementById('log').onclick = function () {
-	defl = "log"
-	boucleprog();
+    logAlarm.getLogAdmin();
 	}
 
   boucleprog = function () {
     console.log("requete en boucle");
-	  var toDisplay;
-
-	  if(defl == "droits"){
-		  toDisplay = "log";
-	  }else{
-		  toDisplay = "droits";
-	  }
+    entiteCo.getDroit();
+    logAlarm.getLogAdmin();
 
 
-	  document.getElementById(defl).style.display = "none";
-	  document.getElementById(toDisplay).style.display = "block";
   }
-
 
 
   boucleprog();

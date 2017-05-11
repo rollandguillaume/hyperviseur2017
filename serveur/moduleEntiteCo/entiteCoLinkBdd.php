@@ -23,5 +23,17 @@
       return $requete->fetchAll();
     }
 
+    public function getDroit () {
+      $bdd = coBaseDonnee::getConnection();
+
+      $query = "
+      select * from utilisateur
+        ";
+
+        $requete = $bdd->prepare($query);
+        $requete->execute();
+        return $requete->fetchAll();
+      }
+
   }
  ?>
