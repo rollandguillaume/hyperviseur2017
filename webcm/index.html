@@ -6,7 +6,7 @@
 <body>
 <table><tr style="vertical-align:top;">
 	<td>
-		WebCam :<div id="camera" style="width:480px;height:320px;border:3px solid brown;"></div>Mon mot de passe (si camera)<br /><input type="texte" name="moi" id="moi" />
+		WebCam :<div id="camera" style="width:320px;height:230px;border:3px solid brown;"></div>Mon mot de passe (si camera)<br /><input type="texte" name="moi" id="moi" />
 	</td>
 	<td>
 		<a href="javascript:moi=document.getElementById('moi').value;document.getElementById('moi').disabled=true;stream_on();webcam.capture();void(0);">ON</a>
@@ -14,20 +14,20 @@
 		<a href="javascript:webcam.turnOff();document.getElementById('moi').disabled=false;webcam();void(0);">OFF</a>
 	</td>
 	<td>
-		stream direct (Canvas) :<div style="width:480px;height:320px;border:3px solid yellow;"><canvas id='canvas' width='480' height='320'></canvas></div>
+		stream direct (Canvas) :<div style="width:320px;height:240px;border:3px solid yellow;"><canvas id='canvas' width='320' height='240'></canvas></div>
 	</td>
 	<td>
-		stream retour image :<div style="width:480px;height:320px;border:3px solid pink;" id="bloc"><img id="stream" src="" /></div>Mot de passe interlocuteur<br /><input type="texte" name="toi" id="toi" />
+		stream retour image :<div style="width:320px;height:240px;border:3px solid pink;" id="bloc"><img id="stream" src="" /></div>Mot de passe interlocuteur<br /><input type="texte" name="toi" id="toi" />
 	</td>
 </tr></table>
 <script>
 var moi='',img='',data,canvas=document.getElementById('canvas'),pos=0,ctx=null,image=[],b=1,n=document.getElementById('stream');
 var options={
-	width:480,
-	height:320,
+	width:320,
+	height:240,
 	swffile:"webcam.swf",
 	wrapper:"webcam",
-	jpgQuality:30,
+	jpgQuality:50,
 	jpgEncode:0,
 	refresh:200 // raffraichissement en ms
 };

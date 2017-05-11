@@ -22,7 +22,7 @@ AffichCentr.prototype.toStringEntite = function (idEntite) {
       var jsondata = JSON.parse(data);
       // console.log(jsondata);
 
-      var nameOfVideo = "video0.ogv";//a recuperer d'une requete TODO
+      var nameOfVideo = jsondata[0]["id"];//a recuperer d'une requete TODO
       
       var videoSuppri = 1;
       if (divres.childNodes[1] !== undefined) {
@@ -37,7 +37,7 @@ AffichCentr.prototype.toStringEntite = function (idEntite) {
         var div = document.createElement("div");
         var ul = document.createElement("ul");
         //
-          var video = myself.makeVideo("video0.ogv", "ogg");
+          var video = myself.makeVideo(nameOfVideo, "ogg");
           divres.appendChild(video);
         //
         myself.makeItemList(ul, "id", jsondata[0]["id"]);
@@ -70,12 +70,12 @@ AffichCentr.prototype.makeItemList = function (ul, title, val) {
 
 AffichCentr.prototype.makeVideo = function (name, type) {
   var video = document.createElement("img");
-  video.setAttribute("src", "/webcm/webcam/webMDR.jpg?"+ new Date().getTime());
+  video.setAttribute("src", "/webcm/webcam/webRobot"+name+".jpg?"+ new Date().getTime());
   if(interStream != undefined){
 	clearInterval(interStream);
   }
   interStream = window.setInterval(function(){
-	video.src='/webcm/webcam/webMDR.jpg?'+new Date().getTime();
+	video.src='/webcm/webcam/webRobot'+name+'.jpg?'+new Date().getTime();
        },200);
   return video;
 };
