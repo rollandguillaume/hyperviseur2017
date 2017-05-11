@@ -290,7 +290,7 @@
 
       $query ="CREATE TABLE `utilisateur` (
   		  `id` int(10) AUTO_INCREMENT PRIMARY KEY,
-    		login varchar(20) not null,
+    		login varchar(20) unique not null,
     		pwd varchar(20) not null,
     		admin int(4) default 0
     		) ENGINE=InnoDB DEFAULT CHARSET=latin1;

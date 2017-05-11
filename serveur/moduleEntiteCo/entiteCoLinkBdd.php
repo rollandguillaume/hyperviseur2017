@@ -62,12 +62,20 @@
       }
       else if ($action == "supprimer") {
         if (isset($login) && isset($pwd) && isset($admin)) {
-          $query = "
+          $query = "select count(*) from utilisateur where admin=1";
+          $requete = $bdd->prepare($query);
+          $requete->execute();
+          $count = $requete->fetch()[0];
+
+          if ($count != 1) {
+            $query = "
             delete from utilisateur
             where login = :login
-          ";
-          $tabexe["login"] = $login;
-          $ret = "ok";
+            ";
+            $tabexe["login"] = $login;
+            $ret = "ok";
+
+          }
         }
       }
       else if ($action == "promote") {

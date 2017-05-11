@@ -14,7 +14,7 @@ window.onload = function () {
     var action = select.options[select.selectedIndex].value;
 
     entiteCo.setUserByAdmin(login, pwd, admin, action);
-
+    entiteCo.getDroit();
   }
 
   boucleprog = function () {
