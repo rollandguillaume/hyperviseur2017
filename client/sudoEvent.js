@@ -8,7 +8,7 @@ window.onload = function () {
   }
   document.getElementById('log').onclick = function () {
 	defl = "log"
-	boucleprog();  
+	boucleprog();
 	}
 
   boucleprog = function () {
@@ -31,7 +31,7 @@ window.onload = function () {
   boucleprog();
   window.setInterval(function () {
     boucleprog();
-  }, 10000);
+  }, actuProg);
 
 
 

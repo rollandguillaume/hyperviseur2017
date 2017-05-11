@@ -47,6 +47,8 @@
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script type="text/javascript" src="client/config.js"></script>
+
   <!-- event a garder en dernier -->
   <script type="text/javascript" src="client/sudoEvent.js"></script>
 

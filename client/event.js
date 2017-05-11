@@ -36,5 +36,5 @@ window.onload = function () {
   boucleprog();
   window.setInterval(function () {
     boucleprog();
-  }, 1000);
+  }, actuProg);
 }

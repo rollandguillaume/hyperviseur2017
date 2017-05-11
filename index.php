@@ -66,6 +66,7 @@
     <script type="text/javascript" src="client/affichCentr.js"></script>
     <script type="text/javascript" src="client/entiteCo.js"></script>
     <script type="text/javascript" src="client/logAlarm.js"></script>
+    <script type="text/javascript" src="client/config.js"></script>
 
     <!-- event a garder en dernier -->
     <script type="text/javascript" src="client/event.js"></script>
