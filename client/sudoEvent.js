@@ -6,13 +6,16 @@ window.onload = function () {
   var logAlarm = new LogAlarm();
 
 
-  // document.getElementById('droits').onclick = function () {
-  //   entiteCo.getDroit();
-  //
-  // }
-  // document.getElementById('log').onclick = function () {
-  //   logAlarm.getLogAdmin();
-	// }
+  document.getElementById("submitUser").onclick = function () {
+    var login = document.getElementById("loginUser").value;
+    var pwd = document.getElementById("pwdUser").value;
+    var admin = document.getElementById("adminUser").checked;
+    var select = document.getElementById("selectActionUser")
+    var action = select.options[select.selectedIndex].value;
+
+    entiteCo.setUserByAdmin(login, pwd, admin, action);
+
+  }
 
   boucleprog = function () {
     console.log("requete en boucle");

@@ -58,7 +58,6 @@ EntiteCo.prototype.getListeEntiteCo = function (affichCentr, logAlarm) {
 };
 
 
-
 EntiteCo.prototype.getDroit = function () {
   var divres = document.getElementById('resultatAffichCentr');
 
@@ -73,8 +72,9 @@ EntiteCo.prototype.getDroit = function () {
       // console.log(jsondata);
 
       //vider le contenu
-      while (divres.childNodes.length > 1) {
-        divres.removeChild(divres.childNodes[1]);
+      var int = 2;
+      while (divres.childNodes.length > int) {
+        divres.removeChild(divres.childNodes[int]);
       }
 
       var tab = document.createElement("table");
@@ -99,6 +99,35 @@ EntiteCo.prototype.getDroit = function () {
   });
 
 };
+
+EntiteCo.prototype.setUserByAdmin = function (login, pwd, admin, action) {
+  var myself = this;
+
+  var datasend = {
+    data:"setUserByAdmin",
+    login:login,
+    pwd:pwd,
+    admin:admin,
+    action:action
+  };
+
+  $.ajax({
+    type: 'POST',
+    url: 'serveur/moduleEntiteCo/entiteCo.php',
+    data: {data:datasend},
+    success: function(data) {
+      console.log(data);
+      var jsondata = JSON.parse(data);
+      // console.log(jsondata);
+
+    },
+    error: function() {
+      console.log("erreur");
+    }
+  });
+
+};
+
 
 // EntiteCo.prototype.makeItemList = function (ul, title) {
 //   var li = document.createElement("li");

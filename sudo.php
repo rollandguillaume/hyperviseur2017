@@ -48,12 +48,23 @@ session_start();
         <!-- <input id="entiteCo" type="button" name="" value="entiteCo"> -->
 
         <div id="resultatAffichCentr" class="affichCentr col-6">
-
+          <div class="">
+            <input type="text" id="loginUser" value="" placeholder="login">
+            <br><input type="password" id="pwdUser" value="" placeholder="password (new user only)">
+            <br><input type="checkbox" id="adminUser" value="is admin"><label for="adminUser">is admin</label>
+            <br><select class="" id="selectActionUser">
+              <option value="ajouter">ajouter</option>
+              <option value="supprimer">supprimer</option>
+              <option value="promote">promote</option>
+              <option value="demote">demote</option>
+            </select>
+            <br><input type="button" id="submitUser" value="go">
+            <hr>
+          </div>
         </div>
 
         <div id="resultatLogAlarm" class="logAlarm col-6">
-          <div class="row">
-          </div>
+
         </div>
         <!-- <input id="logAlarm" type="button" name="" value="logAlarm"> -->
 
