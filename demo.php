@@ -11,8 +11,11 @@
   <div class="">
     <input id="reinitialise" type="button" name="" value="restart">
   	<input id="config1" type="button" name="" value="Configuration 1">
-  	<input id="config2" type="button" name="" value="Configuration 2">
-  	<input id="config3" type="button" name="" value="Configuration 3">
+  	<input id="config20" type="button" name="" value="Configuration 2.0">
+  	<input id="config21" type="button" name="" value="Configuration 2.1">
+  	<input id="config22" type="button" name="" value="Configuration 2.2">
+  	<input id="config23" type="button" name="" value="Configuration 2.3">
+  	<input id="config24" type="button" name="" value="Configuration 2.4">
   </div>
 
   <hr>

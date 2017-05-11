@@ -9,15 +9,27 @@ window.onload = function () {
   //EVENT DEMO
   //-------------------
 
-  var btnReini = document.getElementById('config1').onclick = function () {
-      demo.config1();
+  document.getElementById('config1').onclick = function () {
+      demo.config("config1");
   };
-  var btnReini = document.getElementById('config2').onclick = function () {
-      demo.config2();
+  document.getElementById('config20').onclick = function () {
+      demo.config("config2p0");
   };
-  var btnReini = document.getElementById('config3').onclick = function () {
-      demo.config3();
+  document.getElementById('config21').onclick = function () {
+      demo.config("config2p1");
   };
+  document.getElementById('config22').onclick = function () {
+      demo.config("config2p2");
+  };
+  document.getElementById('config23').onclick = function () {
+      demo.config("config2p3");
+  };
+  document.getElementById('config24').onclick = function () {
+      demo.config("config2p4");
+  };
+
+
+
 
   var btnReini = document.getElementById('reinitialise').onclick = function () {
       demo.reinitialiser();

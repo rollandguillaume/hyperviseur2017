@@ -25,9 +25,9 @@ Demo.prototype.makeAction = function (idEntite, action, nameEntite) {
 
 };
 
-Demo.prototype.config1 = function () {
+Demo.prototype.config = function (config) {
   var datasend = {
-    data:"config1",
+    data:config
   };
 
   $.ajax({
@@ -47,53 +47,10 @@ Demo.prototype.config1 = function () {
 
 };
 
-Demo.prototype.config2 = function () {
-  var datasend = {
-    data:"config2",
-  };
-
-  $.ajax({
-    type: 'POST',
-    url: 'serveur/moduleDemo/demo.php',
-    data: {data:datasend},
-    success: function(data) {
-      var jsondata = JSON.parse(data);
-      console.log(jsondata);
-
-
-    },
-    error: function(erreur) {
-      console.log("erreur");
-    }
-  });
-
-};
-
-Demo.prototype.config3 = function () {
-  var datasend = {
-    data:"config3",
-  };
-
-  $.ajax({
-    type: 'POST',
-    url: 'serveur/moduleDemo/demo.php',
-    data: {data:datasend},
-    success: function(data) {
-      var jsondata = JSON.parse(data);
-      console.log(jsondata);
-
-
-    },
-    error: function(erreur) {
-      console.log("erreur");
-    }
-  });
-
-};
 
 Demo.prototype.reinitialiser = function () {
   var datasend = {
-    data:"reinitialiser",
+    data:"reinitialiser"
   };
 
   $.ajax({
