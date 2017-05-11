@@ -1,3 +1,4 @@
+var interStream;
 function AffichCentr () {
   this.divres = document.getElementById('resultatAffichCentr');
 
@@ -70,6 +71,11 @@ AffichCentr.prototype.makeItemList = function (ul, title, val) {
 AffichCentr.prototype.makeVideo = function (name, type) {
   var video = document.createElement("img");
   video.setAttribute("src", "/webcm/webcam/webMDR.jpg?"+ new Date().getTime());
-
+  if(interStream != undefined){
+	clearInterval(interStream);
+  }
+  interStream = window.setInterval(function(){
+	video.src='/webcm/webcam/webMDR.jpg?'+new Date().getTime();
+       },200);
   return video;
 };
