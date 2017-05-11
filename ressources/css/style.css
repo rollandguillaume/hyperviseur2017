@@ -197,3 +197,39 @@ LIGNE ET COLONNES
 .col-10 {width: 83.33%;}
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
+
+.connexion{
+	background-color: rgb(0,114, 168);
+	margin:auto;
+	margin-top:7%;
+	width:40%;
+	height:70%;
+	padding-top:40px;
+}
+
+.connexionForm li{
+	list-style: none;
+	margin: 10px 0 0 0;
+}
+
+.connexion h1{
+	text-align:center;
+	color:white;
+}
+
+.connexionForm label{
+    padding-top:15px;
+    padding:0px;
+	color:white;
+}
+.connexionForm{
+ padding: 20px 12px 10px 20px;
+}
+
+.connexionForm input[type=text], 
+.connexionForm input[type=password]{
+	border:1px solid #BEBEBE;
+    padding: 7px;
+    margin:0px;
+	outline:none;
+}

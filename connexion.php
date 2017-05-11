@@ -25,13 +25,10 @@ if (isset($_POST["login"]) && isset($_POST["pwd"])) {
     $_SESSION["username"] = $resultat[0]["login"];
     header("Location: index.php");
   } else {
-    echo "login et pwd introuvable alors afficher de nouveau le formulaire et makeAlerte";
+    echo "Identifiant ou mot de passe incorect";
     include("formConnexion.php");
   }
-
-
 } else {
-
   include("formConnexion.php");
 
 }

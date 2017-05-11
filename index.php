@@ -79,10 +79,6 @@
     <script type="text/javascript" src="client/event.js"></script>
     <?php
   }
-
   ?>
-
-
-
 </body>
 </html>
