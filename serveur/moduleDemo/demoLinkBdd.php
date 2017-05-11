@@ -6,7 +6,111 @@
     public function __construct() {
 
     }
+	
+	//config 1 : prépare la table utilisateur avec les logins et pwd du jury
+	public function config1(){
+		
+		reinitialise();
+		
+		$bdd = coBaseDonnee::getConnection();
+	  
+		$query ="INSERT INTO `utilisateur` (`login`, `pwd`, `admin`) VALUES
+			('aze', 'aze', 1),
+			('qsd', 'qsd', 0);
+			";
+		$requete = $bdd->prepare($query);
+		$requete->execute();
+	  
+		return "OK";
+	  
+	}
 
+	//config 2 : config1 + prépare les entités à superviser
+	public function config2(){
+		
+		reinitialise();
+
+		$bdd = coBaseDonnee::getConnection();
+		
+		$query ="INSERT INTO `utilisateur` (`login`, `pwd`, `admin`) VALUES
+			('aze', 'aze', 1),
+			('qsd', 'qsd', 0);
+			";
+		$requete = $bdd->prepare($query);
+		$requete->execute();
+		
+		$query = "INSERT INTO `entiteCo` (`nom`) values
+	      	('robot'),
+      		('ascenseur'),
+      		('robot'),
+      		('robot'),
+      		('porte'),
+      		('maintenance');";
+		$requete = $bdd->prepare($query);
+		$requete->execute();
+		
+		$query = "INSERT INTO `infoEntite` (vitesse, `posX`, `posY`, `disponibilite`, `chargePortee`) VALUES
+    		(10, -500, 200, 1, 0),
+    		(25, 500, 80, 1, 0),
+    		(30, -95, -90, 1, 0),
+    		(17, -65, -45, 1, 0),
+    		(6, 20, 20, 1, 0),
+    		(0, 0, 0, 1, 0);
+    		";
+		$requete = $bdd->prepare($query);
+		$requete->execute();
+		
+		return "OK";
+		
+	}
+	
+	//config 3 : config2 + crée des alarmes
+	public function config3(){
+		
+		$bdd = coBaseDonnee::getConnection();
+		
+		$query ="INSERT INTO `utilisateur` (`login`, `pwd`, `admin`) VALUES
+			('aze', 'aze', 1),
+			('qsd', 'qsd', 0);
+			";
+		$requete = $bdd->prepare($query);
+		$requete->execute();
+		
+		$query = "INSERT INTO `entiteCo` (`nom`) values
+	      	('robot'),
+      		('ascenseur'),
+      		('robot'),
+      		('robot'),
+      		('porte'),
+      		('maintenance');";
+		$requete = $bdd->prepare($query);
+		$requete->execute();
+		
+		$query = "INSERT INTO `infoEntite` (vitesse, `posX`, `posY`, `disponibilite`, `chargePortee`) VALUES
+    		(10, -500, 200, 1, 0),
+    		(25, 500, 80, 1, 0),
+    		(30, -95, -90, 1, 0),
+    		(17, -65, -45, 1, 0),
+    		(6, 20, 20, 1, 0),
+    		(0, 0, 0, 1, 0);
+    		";
+		$requete = $bdd->prepare($query);
+		$requete->execute();
+		
+		$query ="INSERT INTO `logAlarm` ( `type`, `description`, `date`, `time`, `info`, sender, niveau) VALUES
+    		('alarme', 'description de l\'alarme', '2017-05-04', '00:00:00', 'informations', 1, 2),
+    		('log', 'description du log', '2017-05-04', '00:00:00', 'informations', 2, 1),
+    		('alarme', 'alarme de sécurité', '2017-05-04', '00:00:00', 'informations', 1, 2),
+    		('log', 'robot truc s\'est connecté', '2017-05-04', '00:00:00', 'informations', 3, 3),
+    		('alarme', 'eboulement niveau cavite 3', '2017-05-04', '00:00:00', 'informations', 2, 1);
+    		";
+		$requete = $bdd->prepare($query);
+		$requete->execute();
+		
+		return "OK";
+		
+	}
+	
     public function makeAction ($action, $id) {
       $bdd = coBaseDonnee::getConnection();
 
@@ -30,9 +134,31 @@
         $tabexe["id"] = $id;
         $tabexe["date"] = date("Y-m-d");
         $tabexe["time"] = date("H:i:s");
-      } else {
-        //TODO else if avec autre action
-      }
+		
+      } else if($action == "connecter"){
+		  
+		$query = "
+          insert into entiteCo (nom)
+          values (
+            ".$id."
+          );
+		  ";
+		  
+		  //TODO vérifier la requête
+		  
+      } else if($action == "deconnecter"){
+		  
+		  $query = "
+          delete from entiteCo
+          where id = ".$id."
+          ;
+		  ";
+		  
+		  //TODO vérifier la requête
+		  
+	  } else if($action =="creer"){
+		  //TODO creer table d'entités dans la bdd
+	  }
 
       $requete = $bdd->prepare($query);
       $requete->execute($tabexe);
@@ -40,6 +166,7 @@
     }
 
 
+	//Fonction qui réalise un drop de toutes les tables de la bdd et qui les recrée, vides
     public function reinitialise () {
       $bdd = coBaseDonnee::getConnection();
 
@@ -58,15 +185,7 @@
       $requete = $bdd->prepare($query);
       $requete->execute();
 
-      $query = "insert into entiteCo (nom) values
-	      	('robot'),
-      		('ascenseur'),
-      		('robot'),
-      		('robot'),
-      		('porte'),
-      		('maintenance');";
-      $requete = $bdd->prepare($query);
-      $requete->execute();
+      
 
       $query = "CREATE TABLE `infoEntite` (
 		  `id` int(10) AUTO_INCREMENT PRIMARY KEY,
@@ -79,16 +198,7 @@
       $requete = $bdd->prepare($query);
       $requete->execute();
 
-      $query = "INSERT INTO `infoEntite` (vitesse, `posX`, `posY`, `disponibilite`, `chargePortee`) VALUES
-    		(10, -500, 200, 1, 0),
-    		(25, 500, 80, 1, 0),
-    		(30, -95, -90, 1, 0),
-    		(17, -65, -45, 1, 0),
-    		(6, 20, 20, 1, 0),
-    		(0, 0, 0, 1, 0);
-    		";
-      $requete = $bdd->prepare($query);
-      $requete->execute();
+      
 
       $query ="CREATE TABLE `logAlarm` (
 		  `id` int(10) AUTO_INCREMENT PRIMARY KEY,
@@ -106,15 +216,7 @@
       $requete = $bdd->prepare($query);
       $requete->execute();
 
-      $query ="INSERT INTO `logAlarm` ( `type`, `description`, `date`, `time`, `info`, sender, niveau) VALUES
-    		('alarme', 'description de l\'alarme', '2017-05-04', '00:00:00', 'informations', 1, 2),
-    		('log', 'description du log', '2017-05-04', '00:00:00', 'informations', 2, 1),
-    		('alarme', 'alarme de sécurité', '2017-05-04', '00:00:00', 'informations', 1, 2),
-    		('log', 'robot truc s\'est connecté', '2017-05-04', '00:00:00', 'informations', 3, 3),
-    		('alarme', 'eboulement niveau cavite 3', '2017-05-04', '00:00:00', 'informations', 2, 1);
-    		";
-      $requete = $bdd->prepare($query);
-      $requete->execute();
+      
 
       $query ="CREATE TABLE `tabletest` (
 		  `id` int(10)  AUTO_INCREMENT PRIMARY KEY,
@@ -126,12 +228,7 @@
       $requete = $bdd->prepare($query);
       $requete->execute();
 
-      $query ="INSERT INTO `tabletest` (`id`, `titre`, `autre`, `description`) VALUES
-    		(1, 'titre1', 1, 'descript1'),
-    		(2, 'titre2', 2, 'descript2');
-    		";
-      $requete = $bdd->prepare($query);
-      $requete->execute();
+      
 
       $query ="CREATE TABLE `utilisateur` (
 		  `id` int(10) AUTO_INCREMENT PRIMARY KEY,
@@ -140,13 +237,6 @@
       admin int(4) default 0
 		) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 		";
-      $requete = $bdd->prepare($query);
-      $requete->execute();
-
-      $query ="INSERT INTO `utilisateur` (`login`, `pwd`, `admin`) VALUES
-        ('aze', 'aze', 1),
-        ('qsd', 'qsd', 0);
-        ";
       $requete = $bdd->prepare($query);
       $requete->execute();
 
