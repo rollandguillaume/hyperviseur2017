@@ -62,5 +62,18 @@
       return $requete->fetchAll();
     }
 
+    public function getLogAdmin () {
+      $bdd = coBaseDonnee::getConnection();
+
+      $query = "
+      select * from logAlarm
+      where type=\"log\"
+      ";
+
+      $requete = $bdd->prepare($query);
+      $requete->execute();
+      return $requete->fetchAll();
+    }
+
   }
  ?>

@@ -29,8 +29,8 @@
   <div class="row">
 
     <div id="resultatEntiteCo" class="entiteCo col-1">
-	<div id="droits"> Droits</div>
-	<div id="log"> Log</div>
+    	<div id="droits"> Droits</div>
+    	<div id="log"> Log</div>
     </div>
     <!-- <input id="entiteCo" type="button" name="" value="entiteCo"> -->
 
@@ -48,6 +48,8 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script type="text/javascript" src="client/config.js"></script>
+  <script type="text/javascript" src="client/entiteCo.js"></script>
+  <script type="text/javascript" src="client/logAlarm.js"></script>
 
   <!-- event a garder en dernier -->
   <script type="text/javascript" src="client/sudoEvent.js"></script>

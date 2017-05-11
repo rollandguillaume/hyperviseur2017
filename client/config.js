@@ -1,2 +1,2 @@
 var actuCentrMs = 100;
-var actuProg = 10000;
+var actuProg = 5000;

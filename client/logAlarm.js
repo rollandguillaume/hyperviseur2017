@@ -80,8 +80,37 @@ LogAlarm.prototype.getLog = function () {
       var jsondata = JSON.parse(data);
       // console.log(jsondata);
 
-      myself.emptyList();
+      myself.emptyList(2);
 
+      myself.constructList(jsondata);
+
+    },
+    error: function() {
+      console.log("erreur");
+    }
+  });
+};
+
+LogAlarm.prototype.getLogAdmin = function () {
+  var divres = document.getElementById('resultatLogAlarm');
+
+  var datasend = {
+    data:"logAdmin",
+  };
+
+  var myself = this;
+
+  $.ajax({
+    type: 'POST',
+    url: 'serveur/moduleLogAlarm/logAlarm.php',
+    data: {data:datasend},
+    success: function(data) {
+      var jsondata = JSON.parse(data);
+      // console.log(jsondata);
+
+      myself.emptyList(1);
+
+      // construction de la liste
       myself.constructList(jsondata);
 
     },
@@ -136,9 +165,10 @@ LogAlarm.prototype.toggleVisibility = function (element, elementToggle) {
   });
 };
 
-LogAlarm.prototype.emptyList = function () {
-  while (this.divres.childNodes.length > 2) {
-    this.divres.removeChild(this.divres.childNodes[2]);
+LogAlarm.prototype.emptyList = function (nbr) {
+  //nbr la pos a partir de laquelle effacer
+  while (this.divres.childNodes.length > nbr) {
+    this.divres.removeChild(this.divres.childNodes[nbr]);
   }
 };
 

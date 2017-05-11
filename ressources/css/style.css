@@ -147,6 +147,25 @@ div.logAlarm > div.row > input {
   background-color: yellow;
 }
 
+/************
+SUDO
+*************/
+table {
+  border-collapse: collapse;
+  border-style: solid;
+}
+
+th {
+  border-style: solid;
+  background-color: silver;
+}
+
+td {
+  border-style: solid;
+
+}
+
+
 /*
 ---------------------------
 LIGNE ET COLONNES
