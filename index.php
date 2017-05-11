@@ -30,6 +30,13 @@
       </div>
       <div class="col-4">
         EXDEMA
+        <?php
+          if (isset($_SESSION["admin"]) && ($_SESSION["admin"] == 1)) {
+            ?>
+            <a href="sudo.php"><input type="button" name="" value="admin"></a>
+            <?php
+          }
+         ?>
       </div>
       <div id="date" class="col-4">
         <script type="text/javascript">
@@ -62,7 +69,7 @@
 
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="ressources/js/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="client/affichCentr.js"></script>
     <script type="text/javascript" src="client/entiteCo.js"></script>
     <script type="text/javascript" src="client/logAlarm.js"></script>

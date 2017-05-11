@@ -6,13 +6,13 @@ window.onload = function () {
   var logAlarm = new LogAlarm();
 
 
-  document.getElementById('droits').onclick = function () {
-    entiteCo.getDroit();
-
-  }
-  document.getElementById('log').onclick = function () {
-    logAlarm.getLogAdmin();
-	}
+  // document.getElementById('droits').onclick = function () {
+  //   entiteCo.getDroit();
+  //
+  // }
+  // document.getElementById('log').onclick = function () {
+  //   logAlarm.getLogAdmin();
+	// }
 
   boucleprog = function () {
     console.log("requete en boucle");
