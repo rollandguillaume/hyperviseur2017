@@ -26,6 +26,11 @@ EntiteCo.prototype.getListeEntiteCo = function (affichCentr, logAlarm) {
         div.setAttribute("id", id);
         div.appendChild(document.createTextNode(jsondata[i]["nom"]));
         div.addEventListener('click', function() {
+          toggleColor(btnlog, btnalerte);
+          nbAlerteEnCours = 0;
+          btnalerte.style.backgroundColor = "";
+          logAlarm.countAlerte();
+
           var t = this;
           idCentrale = t.getAttribute('id');
           affichCentr.toStringEntite(t.getAttribute('id'));

@@ -23,6 +23,10 @@ if (isset($_POST["data"])) {
         echo json_encode($link->getLog($id));
 
       }
+      else if ($data["data"] == "countalarm") {
+        echo json_encode($link->countAlarm($id));
+
+      }
     }
   }
 

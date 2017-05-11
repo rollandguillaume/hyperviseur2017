@@ -49,9 +49,36 @@ LogAlarm.prototype.getAlarm = function () {
       var jsondata = JSON.parse(data);
       // console.log(jsondata);
 
-      myself.emptyList();
+      myself.emptyList(2);
 
       myself.constructList(jsondata);
+
+    },
+    error: function() {
+      console.log("erreur");
+    }
+  });
+};
+
+LogAlarm.prototype.countAlerte = function () {
+  var datasend = {
+    data:"countalarm",
+    id:idCentrale
+  };
+
+  var myself = this;
+
+  $.ajax({
+    type: 'POST',
+    url: 'serveur/moduleLogAlarm/logAlarm.php',
+    data: {data:datasend},
+    success: function(data) {
+      var jsondata = JSON.parse(data);
+      console.log(jsondata);
+
+      if (jsondata > nbAlerteEnCours) {
+        btnalerte.style.backgroundColor = "red";
+      }
 
     },
     error: function() {

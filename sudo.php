@@ -17,8 +17,13 @@ session_start();
 
       <div class="row header">
         <div class="col-4">
-          username :
-          <!-- user : TODO -->
+          <form class="" action="connexion.php" method="post">
+            <input type="submit" name="" value="<?php
+              if (isset($_SESSION["username"])) {
+                echo "deconnexion de ".$_SESSION["username"];
+              }
+             ?>">
+          </form>
         </div>
         <div class="col-4">
           EXDEMA
