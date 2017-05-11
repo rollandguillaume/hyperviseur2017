@@ -67,7 +67,7 @@
           <!-- <a href="pdf.php"><input type="button" name="" value="pdf"></a> -->
           <form class="col-4" action="pdf.php" method="post">
             <input type="text" name="truc" value="" hidden>
-            <input type="submit" name="" value="pdf">
+            <input type="submit" name="" value="diagnostic">
           </form>
         </div>
       </div>
