@@ -33,8 +33,14 @@
 		$bdd = coBaseDonnee::getConnection();
 
 		$query ="INSERT INTO `utilisateur` (`login`, `pwd`, `admin`) VALUES
-			('aze', 'aze', 1),
-			('mpeyrichon', 'mpeyrichon', 1);
+			('test', 'test', 1),
+			('dhairion', 'dhairion', 0),
+			('ssadou', 'ssadou', 0),
+			('cpreaux', 'cpreaux', 0),
+			('jlphilippe', 'jlphilippe', 0),
+			('plaunay', 'plaunay', 0),
+			('mpeyrichon', 'mpeyrichon', 0);
+			('hleroux', 'hleroux', 0);
 			";
 		$requete = $bdd->prepare($query);
 		$requete->execute();
